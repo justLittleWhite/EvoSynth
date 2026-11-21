@@ -24,7 +24,7 @@ def build_parser() -> argparse.ArgumentParser:
         "--capabilities",
         type=Path,
         required=True,
-        help="archetype JSON 数组，字段为 archetype / archetype_desc / verfiy",
+        help="archetype JSON 数组，字段为 archetype / archetype_desc / verify",
     )
     parser.add_argument(
         "--servers", nargs="*", default=None,

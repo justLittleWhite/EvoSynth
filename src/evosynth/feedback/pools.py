@@ -26,8 +26,6 @@ def load_entries(path: Path) -> list[dict[str, Any]]:
     entries = []
     for item in raw:
         entry = dict(item)
-        if "verfiy" in entry and "verify" not in entry:  # 历史拼写
-            entry["verify"] = entry.pop("verfiy")
         entries.append(entry)
     return entries
 

@@ -84,7 +84,7 @@ brackets is the global part id):
 {scope_note}
 
 An archetype is a capability: it is defined by what is done to the roles, never by what the roles
-are in the world. Its name, description and verfiy must therefore stay valid when the subject
+are in the world. Its name, description and verify must therefore stay valid when the subject
 matter, the medium or the kind of quantity is replaced by any other, and are written in
 role-level words.
 
@@ -104,7 +104,7 @@ For each archetype give exactly:
   signatures;
 - archetype_desc: one or two sentences saying what is given, what is done with it, and what is
   produced;
-- verfiy: one sentence stating what must hold of a correct result, drawing on the shortcut fields
+- verify: one sentence stating what must hold of a correct result, drawing on the shortcut fields
   of its signatures so that the shortcut fails it;
 - member_part_ids: the global part ids (the bracket numbers) of every signature in this archetype.
   At least two ids.
@@ -115,7 +115,7 @@ Before answering, check the final set against these failure signals:
 {failure_signals}
 
 Return ONLY a JSON array. Every object must contain exactly these four keys:
-[{{"archetype": "...", "archetype_desc": "...", "verfiy": "...", "member_part_ids": [1, 2]}}]"""
+[{{"archetype": "...", "archetype_desc": "...", "verify": "...", "member_part_ids": [1, 2]}}]"""
 
 # ── 阶段 2b：候选 archetype 近重复合并 ─────────────────────────────────────
 
@@ -145,14 +145,14 @@ For each merged archetype give exactly:
 - archetype: a snake_case name derived from the shared operation and dependency;
 - archetype_desc: one or two sentences saying what is given, what is done with it, and what is
   produced, still valid if the subject matter is replaced;
-- verfiy: one sentence stating what must hold of a correct result so that the shortcut fails it;
+- verify: one sentence stating what must hold of a correct result so that the shortcut fails it;
 - member_part_ids: the union of ids, at least two.
 
 Before answering, check the final set against these failure signals:
 {failure_signals}
 
 Return ONLY a JSON array. Every object must contain exactly these four keys:
-[{{"archetype": "...", "archetype_desc": "...", "verfiy": "...", "member_part_ids": [1, 2]}}]"""
+[{{"archetype": "...", "archetype_desc": "...", "verify": "...", "member_part_ids": [1, 2]}}]"""
 
 # ── 覆盖率不足时，只把未覆盖的 part 补进已有 archetype ─────────────────────
 
@@ -175,4 +175,4 @@ member_part_ids may contain only ids from the uncovered list. Every uncovered id
 in exactly one returned archetype.
 
 Return ONLY a JSON array. Every object must contain exactly these four keys:
-[{{"archetype": "...", "archetype_desc": "...", "verfiy": "...", "member_part_ids": [1, 2]}}]"""
+[{{"archetype": "...", "archetype_desc": "...", "verify": "...", "member_part_ids": [1, 2]}}]"""

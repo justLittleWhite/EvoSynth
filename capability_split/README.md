@@ -34,8 +34,6 @@ The model, base URL, and API key must be supplied through command-line options o
 3. Stage 2 groups parts in batches of 60, merges near-duplicate candidates, and retries uncovered parts when coverage is low.
 4. Before writing the final file, internal membership IDs are removed. Validation checks archetype names, required fields, and non-empty descriptions.
 
-The loader accepts both `verfiy` and `verify` for compatibility. This module still writes the historical `verfiy` key used by existing archetype files.
-
 ## Output
 
 ```json
@@ -43,12 +41,12 @@ The loader accepts both `verfiy` and `verify` for compatibility. This module sti
   {
     "archetype": "aggregate_report",
     "archetype_desc": "Aggregate and materialize: ...",
-    "verfiy": "The artifact schema and computed values match the specification."
+    "verify": "The artifact schema and computed values match the specification."
   }
 ]
 ```
 
-Each item contains exactly `archetype`, `archetype_desc`, and `verfiy`.
+Each item contains exactly `archetype`, `archetype_desc`, and `verify`.
 
 ## Files
 

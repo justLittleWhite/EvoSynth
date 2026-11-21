@@ -38,8 +38,7 @@ MIN_DISTINCT_CALLS_FLOOR = 3
 def load_archetypes(path: Path) -> dict[str, dict]:
     """读取 capability_split 风格的 archetype JSON 数组。
 
-    每项使用 ``archetype``、``archetype_desc``、``verfiy``（历史拼写，也接受
-    ``verify``）。返回 ``{name: {"desc", "verify"}}``，供采样和世界构造查表。
+    每项使用 ``archetype``、``archetype_desc``、``verify``。返回 ``{name: {"desc", "verify"}}``，供采样和世界构造查表。
     """
     source = Path(path)
     try:
@@ -54,7 +53,7 @@ def load_archetypes(path: Path) -> dict[str, dict]:
             raise ValueError(f"archetype entry {index} is not an object: {source}")
         name = str(item.get("archetype") or "").strip()
         desc = str(item.get("archetype_desc") or item.get("desc") or "").strip()
-        verify = str(item.get("verfiy") or item.get("verify") or "").strip()
+        verify = str(item.get("verify") or "").strip()
         if not name or not desc:
             raise ValueError(
                 f"archetype entry {index} missing archetype or archetype_desc: {source}")

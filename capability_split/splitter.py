@@ -4,7 +4,7 @@
 → 阶段 2a 按批归并候选 archetype → 阶段 2b 近重复合并
 → 覆盖率不足时补挂未覆盖 part → 去掉 member_part_ids 后落盘。
 
-输出 JSON 是 archetype 列表,每项仅含 archetype、archetype_desc、verfiy。
+输出 JSON 是 archetype 列表,每项仅含 archetype、archetype_desc、verify。
 """
 
 from __future__ import annotations
@@ -419,7 +419,7 @@ def _repair_coverage(client, model: str, benchmark: str, parts: list[dict],
     indexed = [(part_id, parts[part_id - 1]) for part_id in missing]
     existing = json.dumps([
         {"archetype": row["archetype"], "archetype_desc": row["archetype_desc"],
-         "verfiy": row["verfiy"], "member_part_ids": row["member_part_ids"]}
+         "verify": row["verify"], "member_part_ids": row["member_part_ids"]}
         for row in rows
     ], ensure_ascii=False, indent=1)
     prompt = COVER_PROMPT.format(
@@ -441,7 +441,7 @@ def _repair_coverage(client, model: str, benchmark: str, parts: list[dict],
 def _strip_members(rows: list[dict]) -> list[dict]:
     return [
         {"archetype": row["archetype"], "archetype_desc": row["archetype_desc"],
-         "verfiy": row["verfiy"]}
+         "verify": row["verify"]}
         for row in rows
     ]
 
@@ -573,7 +573,7 @@ def _normalize_archetype(arch: dict, *, with_members: bool = False) -> dict:
     row = {
         "archetype": str(arch.get("archetype") or arch.get("name") or ""),
         "archetype_desc": str(arch.get("archetype_desc") or arch.get("desc") or ""),
-        "verfiy": str(arch.get("verfiy") or arch.get("verify") or ""),
+        "verify": str(arch.get("verify") or ""),
     }
     if with_members:
         row["member_part_ids"] = _member_ids(arch)
@@ -586,12 +586,12 @@ def validate(result: list[dict]) -> list[str]:
         name = arch.get("archetype") or ""
         if not _NAME_RE.match(name):
             warnings.append(f"invalid archetype name: {name!r}")
-        if set(arch) != {"archetype", "archetype_desc", "verfiy"}:
+        if set(arch) != {"archetype", "archetype_desc", "verify"}:
             warnings.append(f"item {i}: unexpected output keys: {sorted(arch)}")
         if not arch.get("archetype_desc"):
             warnings.append(f"{name or f'item {i}'}: empty archetype_desc")
-        if not arch.get("verfiy"):
-            warnings.append(f"{name or f'item {i}'}: empty verfiy")
+        if not arch.get("verify"):
+            warnings.append(f"{name or f'item {i}'}: empty verify")
     return warnings
 
 

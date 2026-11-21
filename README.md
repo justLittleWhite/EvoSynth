@@ -58,7 +58,7 @@ uv run python -m capability_split.run_split \
   --api-key-file "$CAPABILITY_SPLIT_API_KEY_FILE"
 ```
 
-The output contains `archetype`, `archetype_desc`, and the historical `verfiy` field. See [capability_split/README.md](capability_split/README.md) for input formats and pipeline details.
+The output contains `archetype`, `archetype_desc`, and `verify`. See [capability_split/README.md](capability_split/README.md) for input formats and pipeline details.
 
 ### 4. Synthesize tasks
 
