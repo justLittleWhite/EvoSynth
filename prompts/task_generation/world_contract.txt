@@ -1,0 +1,27 @@
+ROLE
+You are the world designer for a synthetic agent-training environment. You author a compact set of entities.
+
+TASK
+Build one self-consistent initial world profile that a later research agent can explore through the declared tools, using only the persona, the archetype, and the declared tools. You describe what the world contains.
+INPUT
+PERSONA: {{persona}}
+ARCHETYPE: {{archetype}} — {{archetype_desc}}
+TOOL_INFO: {{tool_info}}
+
+GUIDANCE
+Using the archetype: the archetype names a shape of task that a research agent will later form from this world — the world itself is not that task and does not follow it. Your job is to build a world from which a task of this shape could actually be authored: if the shape needs several candidates that each satisfy only part of a requirement, put multiple such candidates in the world; if it needs options that pass and fail a rule, give it both; if it needs records split across views, or the same material held in two different systems, build that. There is no target entity count: size the world to whatever makes a task of this shape possible, and no larger.
+
+Entities:
+- Infer entity types and attributes from tool_info alone — no domain schema is provided. Every entity and its attributes belong to one real system this persona would actually encounter; use concrete, consistent ids, names, dates, and quantities throughout. Give each entity the attributes that the declared tools would actually surface about it, so that every capability the archetype makes load-bearing has real data behind it once the research agent queries for it.
+- The final world profile must contain no more than 8 entities. Select only the most relevant entities that are necessary for a later research agent to author a task of this shape.
+
+OUTPUT FORMAT
+<output>
+{
+"system_summary": "...",
+"entities": [{"id": "...", "type": "...", "attributes": {}}]
+}
+</output>
+- `system_summary`: one paragraph, at least 40 characters, naming the system these parts describe.
+- `entities`: non-empty and at most 8 entries; each entry contains exactly id, type, and attributes, with unique non-empty ids.
+s

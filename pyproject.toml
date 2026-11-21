@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+# 共享环境已预装依赖；editable 登记使用 --no-build-isolation --no-deps。
+[project]
+name = "evosynth"
+version = "0.1.0"
+description = "Agent task synthesis and training-data preparation loop: task synthesis, teacher rollout, and SFT conversion"
+requires-python = ">=3.10"
+dependencies = [
+    "openai>=1.30",
+    "jinja2",
+    "requests",
+    "numpy",
+    "pyyaml",
+    "filelock",
+    "tenacity",
+    "jsonschema",
+]
+
+[project.optional-dependencies]
+sft = ["transformers"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["evosynth*"]
+exclude = ["evosynth.tests*", "evosynth.*.tests*"]
+namespaces = false

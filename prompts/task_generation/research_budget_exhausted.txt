@@ -1,0 +1,7 @@
+Stop calling tools. Using only the observations already in this conversation, finish now in the required output format:
+<question>question text</question>
+<answer>answer text</answer>
+<evidence>
+- value <- call_id=qN, field=field.path
+</evidence>
+Cite only calls that returned successfully (never a failed call). Do not add facts, change entities, or start a different question. If the observations so far already settle a natural question with a definite answer, write it; otherwise pick the best-supported question the observations do settle and answer it.

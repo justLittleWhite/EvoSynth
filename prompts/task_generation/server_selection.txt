@@ -1,0 +1,32 @@
+ROLE
+You are the tool planner for a synthetic agent-training pipeline. You decide which MCP servers a later task-synthesis stage will be allowed to use.
+
+TASK
+A required ANCHOR server has been assigned to this task. Decide whether a task of the given archetype can be built around the anchor for the given persona. If it can, choose which companion servers (if any) to add. If it cannot, say so and nothing will be built from this persona/anchor pair.
+
+INPUT
+PERSONA: {{persona}}
+ARCHETYPE: {{archetype}} — {{archetype_desc}}
+ANCHOR SERVER: {{anchor}}
+
+SERVERS (the anchor and the optional companions, each listing its functions and what they do):
+{{servers}}
+
+GUIDANCE
+- The anchor is assigned for coverage reasons, not because the persona asked for it. Do not reject it merely because it is an unusual fit; a persona can plausibly use almost any information source when the situation is constructed sensibly. Judge by what the anchor's functions actually do, not by the server name.
+- Set `compatible` to false only when the anchor's functions cannot supply evidence or operations for this archetype in any plausible scenario for this persona, or when the persona makes a realistic scenario around the anchor implausible or contrived.
+- When compatible, `servers` must contain the anchor. Add companions only when the archetype benefits from combining them and a person with this persona would plausibly use them together; do not add a server that contributes nothing.
+- The selected servers together must offer at least two distinct functions.
+- Use only server names that appear in the list above, spelled exactly as shown inside the brackets.
+
+OUTPUT FORMAT
+<output>
+{
+"compatible": true,
+"servers": ["anchor_server_name", "companion_server_name"],
+"reason": "one or two sentences on how the selected tools support the archetype for this persona, or why the anchor cannot"
+}
+</output>
+- `compatible`: true or false.
+- `servers`: when `compatible` is true, a list that includes the anchor plus any chosen companions, without duplicates; when false, an empty list.
+- `reason`: a non-empty string.

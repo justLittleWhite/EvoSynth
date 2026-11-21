@@ -1,0 +1,22 @@
+You are checking one already-fixed research task for internal consistency only. Do not judge whether the task is good, difficult, realistic, or benchmark-like — only whether it is self-consistent.
+
+TASK TEXT
+{{task_text}}
+
+ANSWER
+{{answer}}
+
+Check exactly these three things:
+1. The conditions stated or implied by the task text do not contradict each other.
+2. The task text is phrased naturally and unambiguously — a person could read it once and know exactly what is being asked. Reject obvious ambiguity or unreasonable wording.
+3. The task text, its conditions, and the answer are semantically the same question: the answer is what the task text asks for. Reject a task whose wording asks for A, whose conditions actually describe B, or whose answer is C.
+
+OUTPUT FORMAT
+<output>
+{
+"coherent": true/false,
+"reason": "..."
+}
+</output>
+- `coherent`: A boolean indicating whether all three checks pass. It should be `true` only if the task is coherent; otherwise, `false`.
+- `reason`: A brief explanation of why the task is coherent or, if not, the specific contradiction, ambiguity, or mismatch.

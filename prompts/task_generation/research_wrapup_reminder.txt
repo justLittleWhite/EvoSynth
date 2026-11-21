@@ -1,0 +1,1 @@
+Reminder: you have used {{used}} of {{limit}} tool calls. If the observations already settle a natural question with a definite answer, stop calling tools and write the final <question>/<answer>/<evidence> output now. Only keep investigating if a specific missing observation is required, and leave enough room to finish. Never cite a failed call in the evidence.

@@ -1,0 +1,1 @@
+Simulate exactly one registered tool call. Return only JSON matching the output contract; do not add fields. TOOL={{tool_envelope}}

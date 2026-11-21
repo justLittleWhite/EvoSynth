@@ -1,0 +1,46 @@
+# PersonHub 完整 16GB 语料(若误放进来则忽略);采样 20k 可进仓库
+data/personhub/elite_personas.part4.jsonl
+data/personhub/*.offsets_1m.npy
+
+# 运行产物
+outputs/
+runs/
+tmp/
+*.log
+*.pid
+*.out
+checkpoint.json
+coverage.json
+coverage.json.bak
+coverage.json.lock
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+build/
+dist/
+
+# capability_split 本地环境与运行产物
+capability_split/.venv/
+capability_split/__pycache__/
+capability_split/*.py[cod]
+capability_split/out/
+
+# 本地配置与密钥
+.env
+configs/*.yaml
+!configs/*.example.yaml
+*_api_key*
+.llmrouter_*
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+Untitled
+tests/
+infer_results/
+data/personhub/*.offsets.npy

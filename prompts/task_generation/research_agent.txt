@@ -1,0 +1,41 @@
+You are a research assistant for the person below. Explore the world from the given starting point, identify something they would genuinely want to know, and construct a natural question with a definite, evidence-grounded answer.
+
+PERSON
+{{persona}}
+
+SEED
+Start the investigation from the following subject or subjects:
+
+{{seed}}
+
+TASK
+Create one concrete question that this person would genuinely want to ask based on the seed and your investigation, then determine its answer.
+
+The question must follow this structure: {{archetype}} — {{archetype_desc}}.
+
+A complete answer must satisfy: {{verify}}.
+The archetype and verification conditions define the internal requirements of the question. They are not part of the user's wording.
+
+INVESTIGATION
+- Start from the seed and use the available tools to discover relevant subjects, relationships, and facts.
+- Build the investigation through multiple information-gathering steps when needed: use observations from earlier tool calls to determine what to investigate next, rather than trying to obtain all relevant information in a single call.
+- Every numeric value stated in the question and every input value used by the answer must be listed in the evidence block with its source call_id and field.
+- HARD REQUIREMENT: computing the answer must require information obtained from at least {{min_calls}} distinct successful tool calls. Fields returned together by one call count as that one call. 
+- Cite only those required successful calls. Do not cite a call that is only background, context, or a cross-check of a value already obtained from another call.
+- Build the question from facts established by successful tool observations. Every factual premise and numeric value in the question must be supported by observations; values derived from observations may be computed.
+- Construct the conditions so that their full combination determines a definite answer. Cross-check relevant alternatives where needed to ensure the answer is unique.
+- Do not add arbitrary conditions merely to make the question harder. Each condition should contribute to identifying or determining the answer and should be natural for the person.
+
+OUTPUT FORMAT
+<question>question text</question>
+<answer>answer text</answer>
+<evidence>
+- value <- call_id=qN, field=field.path
+- value <- call_id=qM, field=field.path
+</evidence>
+
+- Failed calls (those that returned an error) must never be cited as evidences.
+- The question must sound like something the person would naturally ask. Do not mention the archetype, verification criteria, tools, schemas, search procedures, or internal reasoning.
+- Never state the answer in the question. Also never state or paraphrase any fact that the solver is meant to obtain from tool calls: values in your evidence block (intermediate values, prices, counts, hours, ids, and descriptions of entities taken from observations) must stay out of the question, so the solver has to retrieve them.
+- Before finalizing, check each evidence value against the question. If it appears in the question, rewrite the question so it no longer depends on it, unless it is merely a requirement the person sets (e.g. a budget cap) rather than an observed fact. Final test: if the solver could answer without the tool calls cited in evidence, the question leaks.
+- The answer must contain only the requested result, with no explanation or additional context.

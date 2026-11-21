@@ -1,0 +1,1 @@
+PREVIOUS WORLD CONTRACT WAS INVALID: {{error}}. Regenerate the complete object inside <output></output>. The tag must contain JSON with exactly two fields: "system_summary" (string) and "entities" (array). Do not patch or explain it.

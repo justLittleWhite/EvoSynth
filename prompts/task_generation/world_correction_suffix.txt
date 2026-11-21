@@ -1,0 +1,1 @@
+CORRECTION: Return only a schema-valid output value that stays consistent with the frozen observations. {{consistency_feedback}}

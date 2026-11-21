@@ -1,0 +1,13 @@
+Audit cross-tool consistency between the candidate observation and frozen_related_observations.
+Check the following domain-agnostic cross-tool rules:
+1. Direct attribute match: identical attributes of the same entity, record, or timestamp/period must match across tools (e.g. IDs, names, statuses, counts, quantities, dates, coordinates).
+2. Derived arithmetic, ratio & count identities (relative difference > 0.5% for continuous values or any mismatch for exact counts is a conflict):
+   - Totals and aggregates must equal the sum of their constituent parts or items when all parts are present.
+   - Ratios, rates, averages, and percentages must match their underlying numerator and denominator fields across tools.
+   - List lengths and item counts must match declared count/total fields for the same query scope.
+3. Summary & detail/series alignment: a snapshot or summary value must align with the corresponding entry, extremum (min/max), or latest state in a detailed record or time series for the same entity and window.
+4. Do NOT flag distinct concepts or scopes as conflicts: metrics over different time windows, projections vs historical actuals, filtered subsets vs full populations, or distinct measurement definitions need not be equal unless one mathematically constrains the other.
+
+Output ONLY a JSON object with keys in this exact order so verification happens before the verdict:
+{"checks":["<write out each cross-tool attribute, arithmetic, or structural comparison with exact values>"],"conflicts":["<only checks that failed, stating the exact candidate field and required target value to reconcile with frozen observations; empty [] if none>"],"consistent":boolean}
+FROZEN={{frozen}} CANDIDATE={{candidate}}

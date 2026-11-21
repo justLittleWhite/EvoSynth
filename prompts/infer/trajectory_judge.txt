@@ -1,0 +1,52 @@
+## Task
+{question}
+
+## Trajectory
+
+{trajectory}
+
+## Agent's final answer
+
+{agent_answer}
+
+## Evaluation
+
+### Tool evidence
+
+* Are the tool calls relevant to the task?
+* Does the agent correctly read and interpret the returned results?
+
+### Reasoning
+
+* Do the intermediate conclusions follow from the task and tool outputs?
+* Does the agent introduce any unsupported constraint, assumption, or factual claim?
+
+### Final answer
+
+* Is the final answer supported by the valid reasoning and tool evidence?
+* Does it satisfy all explicit requirements of the task?
+* Is it complete enough to answer the task?
+
+Ignore abandoned or explicitly corrected reasoning steps unless they affect the final conclusion.
+
+## Scoring
+
+Score 1 if all of the following hold:
+
+* The relevant tool outputs are correctly interpreted.
+* The reasoning leading to the final answer is valid.
+* The final answer is supported by the trajectory.
+* The final answer satisfies the explicit task requirements.
+
+Score 0 if any of the following holds:
+
+* The agent misreads or misuses a tool output.
+* The reasoning contains a substantive logical error that affects the conclusion.
+* The agent relies on unsupported information or an unstated constraint.
+* The final answer is not supported by the trajectory.
+* The final answer violates an explicit task requirement or is materially incomplete.
+
+## Output Format
+
+Return only this JSON object:
+{{"score": 0 or 1, "reason": "short justification"}}

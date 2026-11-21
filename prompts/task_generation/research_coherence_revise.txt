@@ -1,0 +1,4 @@
+The question and answer you just wrote failed a review. Keep the investigation already in this conversation. Call a tool again only if a missing observation is required to repair the issue. Replace the question, answer, and evidence so they satisfy the review. The answer must require information from at least {{min_calls}} distinct successful tool calls, and the evidence must cite those calls. The review said:
+{{reason}}
+
+Reply with <question>...</question>, <answer>...</answer>, and <evidence>...</evidence> in that order.

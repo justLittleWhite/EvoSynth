@@ -1,0 +1,2 @@
+A previous attempt at this investigation did not resolve it. Run the investigation again, using this feedback to reach evidence that actually settles the answer; the world and the tools are unchanged. The question does not have to be the same one, but it must be answerable from this world:
+{{feedback}}

@@ -1,0 +1,9 @@
+Your last reply cannot be used: {{problem}}.
+Successful calls you may cite: {{successful}}.
+Reply again with ONLY the corrected final output, in exactly this format (ASCII "<-", one evidence item per line, each starting with "- "):
+<question>question text</question>
+<answer>answer text</answer>
+<evidence>
+- value <- call_id=qN, field=field.path
+</evidence>
+Cite only successful calls from the list above, and keep at least {{min_calls}} distinct successful calls if the answer genuinely depends on them. Do not invent observations. Do not call tools.
