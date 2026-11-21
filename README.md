@@ -4,15 +4,15 @@
 
 # EvoSynth: Environment-Free Data Synthesis for Self-Evolving Tool-Use Agents
 
-EvoSynth is a self-evolving, environment-free framework for synthesizing tool-use trajectories. It diagnoses benchmark failures, evolves a Hierarchical Capability Evolution Tree (HCET), materializes compact controlled worlds, and continuously curates targeted supervision for tool-using agents.
+> 🎯 **EvoSynth** is a self-evolving, environment-free framework for synthesizing tool-use trajectories. It diagnoses benchmark failures, evolves a Hierarchical Capability Evolution Tree (HCET), materializes compact controlled worlds, and continuously curates targeted supervision for tool-using agents.
 
 ## ✨ Highlights
 
 - 🌳 **HCET evolution** — Refine broad capabilities, add missing dimensions, and reallocate quotas according to benchmark failures and node lifecycle states.
 - 🌐 **Environment-free materialization** — Build compact worlds from tool schemas and freeze accepted observations for state-consistent, deterministic replay.
 - 🧩 **Capability abstraction** — Extract transferable solving structures from benchmark tasks.
-- 🏭 **Trajectory synthesis** — Generate tasks and interaction trajectories from capabilities, MCP servers, personas, and controlled world states.
-- 🧪 **Validation** — Check schemas, contracts, world state, and consistency before publishing data.
+- 🧵 **Trajectory synthesis** — Generate tasks and interaction trajectories from capabilities, MCP servers, personas, and controlled world states.
+- 🔍 **Validation** — Check schemas, contracts, world state, and consistency before publishing data.
 - 🧑‍🏫 **Teacher rollout** — Run a model in the tool environment and retain messages, tool calls, answers, and judge results.
 - 🔁 **Feedback loop** — Diagnose external evaluation failures, analyze supply and demand, and produce the next capabilities and curriculum configuration.
 
