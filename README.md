@@ -1,6 +1,4 @@
-<p align="center">
-  <img src="assets/evosynth-logo.png" alt="EvoSynth logo" width="600" />
-</p>
+![EvoSynth logo](assets/evosynth-logo.png)
 
 # EvoSynth: Environment-Free Data Synthesis for Self-Evolving Tool-Use Agents
 
