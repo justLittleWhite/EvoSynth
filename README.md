@@ -1,9 +1,8 @@
 <p align="center">
-  <img src="assets/evosynth-logo.png" alt="EvoSynth logo" width="440" />
+  <img src="assets/evosynth-logo.png" alt="EvoSynth logo" width="600" />
 </p>
 
-
-<p align="center"><strong>Environment-Free Data Synthesis for Self-Evolving Tool-Use Agents</strong></p>
+# EvoSynth: Environment-Free Data Synthesis for Self-Evolving Tool-Use Agents
 
 EvoSynth is a self-evolving, environment-free framework for synthesizing tool-use trajectories. It diagnoses benchmark failures, evolves a Hierarchical Capability Evolution Tree (HCET), materializes compact controlled worlds, and continuously curates targeted supervision for tool-using agents.
 
@@ -24,7 +23,7 @@ EvoSynth is a self-evolving, environment-free framework for synthesizing tool-us
 Python 3.10 or newer is required:
 
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/justLittleWhite/EvoSynth.git
 cd EvoSynth
 uv sync
 uv pip install -e . --no-build-isolation --no-deps
