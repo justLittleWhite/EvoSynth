@@ -1,6 +1,4 @@
-<p align="center">
-  <img src="assets/evosynth-logo.png" alt="EvoSynth logo" width="420">
-</p>
+![EvoSynth logo](assets/evosynth-logo.png)
 
 # EvoSynth: Environment-Free Data Synthesis for Self-Evolving Tool-Use Agents
 
@@ -118,13 +116,13 @@ EvoSynth/
 └── outputs/                       # Local generated artifacts
 ```
 
-## License
-
-This project is licensed under the **Apache License 2.0**. See the [LICENSE](LICENSE) file for details.
-
 ## Citation
 
 <!-- Add the project BibTeX citation here. -->
+
+## License
+
+This project is licensed under the **Apache License 2.0**. See the [LICENSE](LICENSE) file for details.
 
 ## Acknowledgements
 
