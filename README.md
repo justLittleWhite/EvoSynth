@@ -49,6 +49,22 @@ cp .env.example .env
 
 The scripts use OpenAI-compatible APIs. The synthesis and world models may use different endpoints.
 
+## 📁 Project Structure
+
+```text
+EvoSynth/
+├── src/evosynth/task_gen/       # Task synthesis, world construction, and validation
+├── src/evosynth/task_infer/     # Teacher rollout, rewards, and judging
+├── src/evosynth/feedback/       # Failure diagnosis and supply-demand auditing
+├── src/evosynth/utils/          # API, configuration, message, and path utilities
+├── capability_split/             # Benchmark capability extraction and grouping
+├── prompts/                       # Synthesis, inference, audit, and MCP prompts
+├── configs/mcp_pool.json          # MCP server and tool pool
+├── scripts/                       # End-to-end and debugging scripts
+├── data/                          # Persona and other input data
+└── outputs/                       # Local generated artifacts
+```
+
 ### 3. Split benchmark capabilities
 
 ```bash
@@ -100,21 +116,6 @@ bash scripts/fill_quota.sh
 
 See [src/evosynth/feedback/README.md](src/evosynth/feedback/README.md) for the record schema.
 
-## 📁 Project Structure
-
-```text
-EvoSynth/
-├── src/evosynth/task_gen/       # Task synthesis, world construction, and validation
-├── src/evosynth/task_infer/     # Teacher rollout, rewards, and judging
-├── src/evosynth/feedback/       # Failure diagnosis and supply-demand auditing
-├── src/evosynth/utils/          # API, configuration, message, and path utilities
-├── capability_split/             # Benchmark capability extraction and grouping
-├── prompts/                       # Synthesis, inference, audit, and MCP prompts
-├── configs/mcp_pool.json          # MCP server and tool pool
-├── scripts/                       # End-to-end and debugging scripts
-├── data/                          # Persona and other input data
-└── outputs/                       # Local generated artifacts
-```
 
 ## Citation
 
