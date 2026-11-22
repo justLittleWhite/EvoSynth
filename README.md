@@ -110,7 +110,7 @@ EvoSynth/
 ├── src/evosynth/task_infer/     # Teacher rollout, rewards, and judging
 ├── src/evosynth/feedback/       # Failure diagnosis and supply-demand auditing
 ├── src/evosynth/utils/          # API, configuration, message, and path utilities
-├── capability_split/              # Benchmark capability extraction and grouping
+├── capability_split/             # Benchmark capability extraction and grouping
 ├── prompts/                       # Synthesis, inference, audit, and MCP prompts
 ├── configs/mcp_pool.json          # MCP server and tool pool
 ├── scripts/                       # End-to-end and debugging scripts
@@ -124,4 +124,8 @@ This project is licensed under the **Apache License 2.0**. See the [LICENSE](LIC
 
 ## Citation
 
+<!-- Add the project BibTeX citation here. -->
+
 ## Acknowledgements
+
+<!-- Add acknowledgements here. -->
