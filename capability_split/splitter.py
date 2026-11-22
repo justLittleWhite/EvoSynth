@@ -23,7 +23,7 @@ from .prompts import (ANDES_FAILURE_SIGNALS, ANDES_PRINCIPLES, COVER_PROMPT,
 
 _NAME_RE = re.compile(r"^[a-z][a-z0-9_]*$")
 
-# Atlas/其他 benchmark 导出的 CSV 单行可能包含超长 trajectory 字段。
+# 某些 benchmark 导出的 CSV 单行可能包含超长 trajectory 字段。
 csv.field_size_limit(sys.maxsize)
 
 # None = 不截断单个任务文本(避免长规格任务被误判)
@@ -75,7 +75,7 @@ def load_tasks(path: str | Path, trunc: int | None = TASK_TEXT_TRUNC,
     2. 单个 json 文件:顶层是任务数组,或 {"tasks"/"data": [...]};
     3. glob 显式指定:目录下匹配的每个文件 = 一个任务(整文件为题面);
     4. Markdown 任务目录:叶目录含 description.md → task_id = 相对路径;
-    5. mcp-universe 式:目录下 *.json / *.yaml 含 TEXT_KEYS 字段;
+    5. structured benchmark 式:目录下 *.json / *.yaml 含 TEXT_KEYS 字段;
     6. 兜底:目录下 *.md / *.txt,每文件一个任务(README/index 类文件跳过)。
 
     都不命中返回空;格式再特殊就绕过本函数,自组 [{"task_id","text"}]

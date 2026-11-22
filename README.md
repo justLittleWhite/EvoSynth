@@ -1,18 +1,22 @@
-![EvoSynth logo](assets/evosynth-logo.png)
+<img src="assets/evosynth-logo.png" alt="EvoSynth logo" width="420">
 
 # EvoSynth: Environment-Free Data Synthesis for Self-Evolving Tool-Use Agents
 
+[![arXiv](https://img.shields.io/badge/arXiv-TBD-b31b1b.svg)]()
+[![License](https://img.shields.io/badge/license-Apache%202.0-green.svg)](LICENSE)
+
 > 🎯 **EvoSynth** is a self-evolving, environment-free framework for synthesizing tool-use trajectories. It diagnoses benchmark failures, evolves a Hierarchical Capability Evolution Tree (HCET), materializes compact controlled worlds, and continuously curates targeted supervision for tool-using agents.
+
+![EvoSynth overview](assets/overview.png)
 
 ## ✨ Highlights
 
-- 🌳 **HCET evolution** — Refine broad capabilities, add missing dimensions, and reallocate quotas according to benchmark failures and node lifecycle states.
-- 🌐 **Environment-free materialization** — Build compact worlds from tool schemas and freeze accepted observations for state-consistent, deterministic replay.
-- 🧩 **Capability abstraction** — Extract transferable solving structures from benchmark tasks.
-- 🧵 **Trajectory synthesis** — Generate tasks and interaction trajectories from capabilities, MCP servers, personas, and controlled world states.
-- 🔍 **Validation** — Check schemas, contracts, world state, and consistency before publishing data.
-- 🧑‍🏫 **Teacher rollout** — Run a model in the tool environment and retain messages, tool calls, answers, and judge results.
-- 🔁 **Feedback loop** — Diagnose external evaluation failures, analyze supply and demand, and produce the next capabilities and curriculum configuration.
+- 🌳 **Hierarchical Capability Evolution Tree (HCET)** — Turn benchmark failures into fine-grained capability branches, grow missing dimensions, and retire mastered skills while reallocating synthesis quotas.
+- 🌐 **Environment-free materialization** — Build compact worlds from tool schemas without deploying service backends, and ground multi-step interactions in state-consistent entity worlds.
+- 🧩 **Capability abstraction** — Extract transferable solving structures from benchmark tasks and organize them into reusable capability archetypes.
+- 🧊 **State-consistent observation caching** — Freeze audited tool observations in an episode-level ledger so exploration branches remain coherent and accepted trajectories can be replayed deterministically.
+- 🔁 **Diagnosis-driven self-evolution** — Close the evaluate–diagnose–evolve–synthesize–train loop so each training round follows the model's shifting capability boundary.
+- 📈 **Cross-benchmark gains and generalization** — Improve over static synthesis, executable-environment, feedback-driven, and learned-simulation baselines across challenging tool-use benchmarks, including zero-shot out-of-domain transfer.
 
 ## 🚀 Getting Started
 
@@ -49,7 +53,7 @@ The scripts use OpenAI-compatible APIs. The synthesis and world models may use d
 
 ```bash
 uv run python -m capability_split.run_split \
-  --benchmark mcp-atlas \
+  --benchmark your-benchmark \
   --tasks /path/to/tasks.csv \
   --field PROMPT \
   --out outputs/capabilities.json \
@@ -112,6 +116,10 @@ EvoSynth/
 └── outputs/                       # Local generated artifacts
 ```
 
-## 📦 Data Artifacts
+## License
 
-Tasks are stored as JSON bundles containing the natural-language task, metadata, world references, and validation manifest. Rollout outputs retain the full conversation and tool-call trace. The feedback module consumes standard JSONL records from external evaluators, allowing EvoSynth to run the evaluate–diagnose–evolve–synthesize–train loop across existing benchmarks.
+This project is licensed under the **Apache License 2.0**. See the [LICENSE](LICENSE) file for details.
+
+## Citation
+
+## Acknowledgements

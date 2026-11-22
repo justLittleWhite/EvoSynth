@@ -14,16 +14,13 @@ export CAPABILITY_SPLIT_MODEL=your-model
 export CAPABILITY_SPLIT_API_KEY_FILE=/path/to/api_key.txt
 
 uv run python -m capability_split.run_split \
-    --benchmark mcp-universe \
-    --tasks <MCP_UNIVERSE_ROOT>/mcpuniverse/benchmark/configs/mcpuniverse \
-    --out out/mcpuniverse_capabilities.json
-
-uv run python -m capability_split.run_split \
-    --benchmark mcp-atlas \
-    --tasks <MCP_ATLAS_ROOT>/mcp_atlas_tasks.csv \
+    --benchmark your-benchmark \
+    --tasks /path/to/tasks.csv \
     --field PROMPT \
-    --out out/mcp_atlas_capabilities.json
+    --out out/capabilities.json
 ```
+
+For directory, JSON, JSONL, YAML, Markdown, or text inputs, point `--tasks` at the corresponding path and omit `--field` when the loader can infer the task text.
 
 The model, base URL, and API key must be supplied through command-line options or environment variables. Sampling temperature defaults to `0.2` in `splitter.py`.
 

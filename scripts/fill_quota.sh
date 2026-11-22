@@ -10,9 +10,9 @@ PROJECT="$(cd "$HERE/.." && pwd)"
 export PYTHONPATH="$PROJECT/src${PYTHONPATH:+:$PYTHONPATH}"
 
 # ─────────────── 可改参数 ───────────────
-FEEDBACK_DIR="${FEEDBACK_DIR:-$PROJECT/outputs/feedback/mcp_atlas_round_1}"       # feedback 输出目录（含 capabilities/curriculum/audit_report）
+FEEDBACK_DIR="${FEEDBACK_DIR:-$PROJECT/outputs/feedback/benchmark_round_1}"       # feedback 输出目录（含 capabilities/curriculum/audit_report）
 TARGET_TOTAL="${TARGET_TOTAL:-1250}"                                     # 最终要凑够的新题数（发布且 rollout PASS）
-WORK_DIR="${WORK_DIR:-$PROJECT/outputs/mcp_atlas_fill_round_1}"    # 各轮产物与 final/ 都在这里
+WORK_DIR="${WORK_DIR:-$PROJECT/outputs/benchmark_fill_round_1}"    # 各轮产物与 final/ 都在这里
 TOOL_INFO="${TOOL_INFO:-$PROJECT/configs/mcp_pool.json}"
 WORKERS="${WORKERS:-30}"                                             # 造题并发
 ROLLOUT_WORKERS="${ROLLOUT_WORKERS:-30}"
