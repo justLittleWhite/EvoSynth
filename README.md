@@ -125,6 +125,3 @@ See [src/evosynth/feedback/README.md](src/evosynth/feedback/README.md) for the r
 
 This project is licensed under the **Apache License 2.0**. See the [LICENSE](LICENSE) file for details.
 
-## Acknowledgements
-
-<!-- Add acknowledgements here. -->
