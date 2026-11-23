@@ -11,12 +11,16 @@
 
 ## ✨ Highlights
 
-- 🌳 **Hierarchical Capability Evolution Tree (HCET)** — Turn benchmark failures into fine-grained capability branches, grow missing dimensions, and retire mastered skills while reallocating synthesis quotas.
-- 🌐 **Environment-free materialization** — Build compact worlds from tool schemas without deploying service backends, and ground multi-step interactions in state-consistent entity worlds.
-- 🧩 **Capability abstraction** — Extract transferable solving structures from benchmark tasks and organize them into reusable capability archetypes.
-- 🧊 **State-consistent observation caching** — Freeze audited tool observations in an episode-level ledger so exploration branches remain coherent and accepted trajectories can be replayed deterministically.
-- 🔁 **Diagnosis-driven self-evolution** — Close the evaluate–diagnose–evolve–synthesize–train loop so each training round follows the model's shifting capability boundary.
-- 📈 **Cross-benchmark gains and generalization** — Improve over static synthesis, executable-environment, feedback-driven, and learned-simulation baselines across challenging tool-use benchmarks, including zero-shot out-of-domain transfer.
+- 🌳 **Hierarchical Capability Evolution Tree (HCET)** — Abstract transferable solving structures from benchmark tasks and turn benchmark failures into fine-grained capability branches, grow missing dimensions, and retire mastered skills while reallocating synthesis quotas.
+- 🌐 **Environment-free trajectory synthesis** — Construct multi-step tool interactions from tool schemas and compact entity worlds without deploying service backends or compiling executable environments.
+- 🧊 **State-consistent world materialization** — Incrementally freeze and cache tool observations to preserve factual consistency across steps and exploration branches while enabling deterministic replay.
+- 🔁 **Closed-loop scaling of tool-use capabilities** — Connect evaluation, diagnosis, capability evolution, data synthesis, and training in a closed loop that improves performance across agentic tool-use benchmarks and supports zero-shot generalization.
+
+## 📊 Results
+
+Main results on agentic tool-use benchmarks.
+
+![EvoSynth results on agentic tool-use benchmarks](assets/results.png)
 
 ## 🚀 Getting Started
 
